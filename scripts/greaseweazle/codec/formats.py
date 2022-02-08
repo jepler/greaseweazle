@@ -205,6 +205,22 @@ class Format_AtariST_880(Format):
         self.default_revs = m.default_revs
         super().__init__()
     
+class Format_NEC_640(Format):
+    img_compatible = True
+    def __init__(self):
+        import greaseweazle.codec.ibm.mfm as m
+        self.fmt = m.NEC_8_512B
+        self.default_revs = m.default_revs
+        super().__init__()
+
+class Format_NEC_1200(Format):
+    img_compatible = True
+    def __init__(self):
+        import greaseweazle.codec.ibm.mfm as m
+        self.fmt = m.NEC_8_1kB
+        self.default_revs = m.default_revs
+        super().__init__()
+
 class Format_Sega_SF7000(Format):
     img_compatible = True
     default_trackset = 'c=0-39:h=0'
@@ -238,6 +254,8 @@ formats = OrderedDict({
     'ibm.720': Format_IBM_720,
     'ibm.1200': Format_IBM_1200,
     'ibm.1440': Format_IBM_1440,
+    'nec.640': Format_NEC_640,
+    'nec.1200': Format_NEC_1200,
     'sega.sf7000': Format_Sega_SF7000,
 })
 

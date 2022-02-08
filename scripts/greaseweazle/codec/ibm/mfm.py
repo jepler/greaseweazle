@@ -453,6 +453,26 @@ class Commodore_1581(IBM_MFM_720):
     nsec  = 10
     hswap = True
 
+class NEC_8_512B(IBM_MFM_Predefined):
+
+    time_per_rev = 60/360
+    clock = 2e-6
+
+    gap_3 = 57
+    nsec  = 8
+    id0   = 1
+    sz    = 2
+
+class NEC_8_1kB(IBM_MFM_Predefined):
+
+    time_per_rev = 60/360
+    clock = 1e-6
+
+    gap_3 = 116
+    nsec  = 8
+    id0   = 1
+    sz    = 3
+
 class Sega_SF7000(IBM_MFM_Predefined):
 
     time_per_rev = 0.2
